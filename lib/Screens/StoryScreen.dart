@@ -1,4 +1,5 @@
-import 'package:facebook_clone/Data/data.dart';
+import 'package:facebook_clone/Data/Stories.dart';
+import 'package:facebook_clone/Data/User.dart';
 import 'package:facebook_clone/Methods/StoryViewScreen.dart';
 import 'package:facebook_clone/Methods/OnlineStoryCard.dart';
 import 'package:facebook_clone/Methods/AddtoStoryCard.dart';

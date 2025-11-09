@@ -1,4 +1,7 @@
+import 'package:facebook_clone/Data/Post.dart';
+import 'package:facebook_clone/Data/User.dart';
 import 'package:facebook_clone/Methods/CircleIcon.dart';
+import 'package:facebook_clone/Methods/postbox.dart';
 import 'package:facebook_clone/Screens/PostsBox.dart';
 import 'package:facebook_clone/Screens/StoryScreen.dart';
 import 'package:facebook_clone/Screens/firstremaining.dart';
@@ -15,9 +18,9 @@ class Firstpage extends StatelessWidget {
         slivers: [
           SliverAppBar(
             actions: [
-              Circleicon(icon: Icons.search, size: 24),
+              Circleicon(icon: Icons.search, size: 24,color: Colors.black,),
               SizedBox(width: 7.0),
-              Circleicon(icon: FontAwesomeIcons.facebookMessenger, size: 22),
+              Circleicon(icon: FontAwesomeIcons.facebookMessenger, size: 22,color: Colors.black,),
             ],
             floating: true,
             backgroundColor: Colors.white,
@@ -34,7 +37,17 @@ class Firstpage extends StatelessWidget {
           SliverToBoxAdapter(child: Firstremaining()),
           SliverToBoxAdapter(child: Storyscreen()),
           SliverToBoxAdapter(child: Divider(height: 60, thickness: 2.2)),
-          SliverToBoxAdapter(child: Postsbox()),
+          SliverList(
+            delegate: SliverChildBuilderDelegate( (
+              context,
+              index,
+            ) {
+              final post = posts[index];
+              return PostBox(post: post);
+            },
+            childCount: posts.length,),
+            
+          ),
         ],
       ),
     );

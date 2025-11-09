@@ -1,4 +1,4 @@
-import 'package:facebook_clone/Data/data.dart';
+import 'package:facebook_clone/Data/User.dart';
 import 'package:flutter/material.dart';
 
 class Firstremaining extends StatelessWidget {
@@ -10,10 +10,10 @@ class Firstremaining extends StatelessWidget {
     return Container(
       height: 105,
       child: Padding(
-        padding: EdgeInsets.symmetric(horizontal: 10),
+        padding: EdgeInsets.symmetric(),
         child: Column(
           children: [
-            Row(
+            Padding(padding: EdgeInsets.symmetric(horizontal: 8.0),child: Row(
               spacing: 12,
               children: [
                 CircleAvatar(
@@ -40,6 +40,7 @@ class Firstremaining extends StatelessWidget {
                   size: 32,
                 ),
               ],
+            ),
             ),
             Divider(height: 45, thickness: 3.2),
           ],

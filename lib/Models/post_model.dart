@@ -9,6 +9,7 @@ class Post {
   final int likes;
   final int comments;
   final int shares;
+  // final bool isfollowed;
 
   const Post({
     required this.user,
